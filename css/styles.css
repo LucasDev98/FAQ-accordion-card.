@@ -1,0 +1,213 @@
+
+/**--CUSTOM PROPERTIES--**/
+:root {
+    /**--COLORS--**/
+    --Verydarkdesaturatedblue: hsl(238, 29%, 16%);
+    --Softred: hsl(14, 88%, 65%);
+    --Softviolet: hsl(273, 75%, 66%);
+    --Softblue: hsl(240, 73%, 65%);
+    --Verydarkgrayishblue: hsl(237, 12%, 33%);
+    --Darkgrayishblue: hsl(240, 6%, 50%);
+    --Lightgrayishblue: hsl(240, 8%, 85%);
+    /**--FONTS--**/
+    --Mainfont:'Kumbh Sans', sans-serif;
+    /**--FONTWEIGHT--**/
+    --Regular:400;
+    --Bold:700;
+}
+
+/**--RESETS--**/
+html {
+    box-sizing: border-box;
+}
+
+*, *:before, *:after {
+    box-sizing: inherit;
+}
+
+body {
+    font-size: 12px;
+    height: 100vh;
+    font-family: var(--Mainfont);
+}
+
+img {
+    max-width: 100%;
+}
+
+/**--UTILITY CLASS--**/
+.bg-primary {
+    background-image: linear-gradient(to top, var(--Softblue) 0%, var(--Softviolet) 50%);
+}
+
+.text-center {
+    text-align: center;
+}
+
+.shadow {
+    filter: drop-shadow(10px 35px 5px rgba(0, 0, 0,.3) );
+}
+
+.onlyshow__desktop {
+    display: none;
+}
+@media ( min-width: 768px ) {
+    .onlyshow__mobile {
+        display: none;
+    }
+    .onlyshow__desktop {
+        display: block;
+    }    
+}
+
+
+
+/**--FAQ STYLES--**/
+.main-wrapper {
+    margin: 150px auto;
+    position: relative;
+    
+    width: min( 90%, 1000px );
+}
+@media ( min-width: 768px ) {
+    .main-wrapper:after {
+        position: absolute;
+        content: '';
+        top: 40%;
+        height: 180px;
+        width: 180px;
+        background-repeat: no-repeat;
+        left: -9%;
+        background-size: 180px;
+        background-image: url(../images/illustration-box-desktop.svg);
+    }
+}
+
+.faq {
+    box-shadow: 5px 5px 5px 5px rgba(0, 0, 0,.3);
+    background-color: white;
+    border-radius: 20px;
+    display: grid;
+  
+    height: 522px;
+    grid-template-rows: 1fr 3fr;
+
+}
+
+@media ( min-width: 768px ) {
+    .faq {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: 1fr;
+    }
+}
+
+
+.faq__img {
+    position: relative;
+    display: flex;
+    justify-content: center;
+}
+
+.faq__img img {
+    width: 80%;
+    position: absolute;
+    margin-top: -36%;
+    
+    
+}
+
+@media ( min-width: 768px ) {
+    .faq__img {
+        overflow: hidden;
+        padding: 35px;
+        background-position: -413px -217px;
+        background-size: 800px;
+        background-repeat: no-repeat;
+        background-image: url(../images/bg-pattern-desktop.svg);
+    }
+    .faq__img img{
+        margin: 0;
+        top: 10%;
+        width: auto;
+        left: -17%;
+    }
+}
+
+.faq__container {
+    padding: 35px;
+    display: flex;
+    flex-wrap: wrap;
+}
+@media ( min-width: 768px ) {
+    .faq__container {
+        padding: 55px;
+    }
+}
+.faq__container__title {
+    margin: 0;
+    font-size: 36px;
+    color: var(--Verydarkdesaturatedblue);
+}
+@media ( min-width: 768px ) {
+    .faq__container__title {
+       text-align: left;
+       font-size: 46px;
+    }
+}
+.list{
+    list-style: none;
+    padding: 0;
+
+}
+
+.list__item {
+    border-bottom: 1px solid var(--Lightgrayishblue);
+    transition: all .2s ease-in-out;
+    max-height: 50px;
+    overflow: hidden;
+    /* display: flex; */
+    /* flex-direction: column; */
+    /* justify-content: space-between; */
+    /* padding: 15px 0; */
+}
+.list__item a {
+    display: flex;
+    font-size: 16px;
+    padding: 10px 0;
+    color: var(--Darkgrayishblue);
+    font-weight: var(--Regular);
+    text-decoration: none;
+    align-items: center;
+    justify-content: space-between;
+}
+.list__item a:hover {
+    color: var(--Softred);
+}
+
+.list__item__info{
+   
+    font-weight: 300;
+    color: var(--Verydarkgrayishblue);
+    margin: 10px 0;
+    font-size: 16px;
+    
+}
+
+
+
+.show {
+    transition: all .3s ease-in-out;
+    max-height: 200px!important;
+   
+}
+
+.show svg {
+    transform: rotate(180deg);
+}
+.show strong {
+    color: var(--Verydarkdesaturatedblue);
+}
+/**--attribution --**/
+.attribution { font-size: 11px; text-align: center; }
+.attribution a { color: hsl(228, 45%, 44%); }
